@@ -382,7 +382,7 @@ class Game_Battler < Game_BattlerBase
   #--------------------------------------------------------------------------
   def apply_critical(damage)
 #    damage * 3
-    damage * 3 + user.luk
+    damage * 3 + user.luk # Added user's LUK to the damage formula
   end
   #--------------------------------------------------------------------------
   # * Applying Variance
@@ -397,7 +397,7 @@ class Game_Battler < Game_BattlerBase
   #--------------------------------------------------------------------------
   def apply_guard(damage)
 #    damage / (damage > 0 && guard? ? 2 * grd : 1)
-    damage / (damage > 0 && guard? ? 5 * grd : 1)
+    damage / (damage > 0 && guard? ? 5 * grd : 1) # Improved Guard effectiveness
   end
   #--------------------------------------------------------------------------
   # * Damage Processing
@@ -707,14 +707,14 @@ class Game_Battler < Game_BattlerBase
   # * Effect of Skill/Item on Using Side
   #--------------------------------------------------------------------------
   def item_user_effect(user, item)
-#    user.tp += item.tp_gain * user.tcr
+    user.tp += item.tp_gain * user.tcr
   end
   #--------------------------------------------------------------------------
   # * Get Effect Change Rate by Luck
   #--------------------------------------------------------------------------
   def luk_effect_rate(user)
 #    [1.0 + (user.luk - luk) * 0.01, 0.0].max
-    [1.0 + (user.luk - luk) * 0.001, 0.0].max
+    [1.0 + (user.luk - luk) * 0.001, 0.0].max # Adjusted for higher stat caps
   end
   #--------------------------------------------------------------------------
   # * Determine if Hostile Relation
