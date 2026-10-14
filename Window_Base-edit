@@ -192,7 +192,8 @@ class Window_Base < Window
   # * Get Alpha Value of Translucent Drawing
   #--------------------------------------------------------------------------
   def translucent_alpha
-    return 160
+#    return 160
+    return 127
   end
   #--------------------------------------------------------------------------
   # * Change Text Drawing Color
@@ -451,14 +452,16 @@ class Window_Base < Window
   #--------------------------------------------------------------------------
   # * Draw Name
   #--------------------------------------------------------------------------
-  def draw_actor_name(actor, x, y, width = 112)
+#  def draw_actor_name(actor, x, y, width = 112)
+  def draw_actor_name(actor, x, y, width = 224) # Larger "box" for the name so longer names don't get hit by word wrap
     change_color(hp_color(actor))
     draw_text(x, y, width, line_height, actor.name)
   end
   #--------------------------------------------------------------------------
   # * Draw Class
   #--------------------------------------------------------------------------
-  def draw_actor_class(actor, x, y, width = 112)
+#  def draw_actor_class(actor, x, y, width = 112)
+  def draw_actor_class(actor, x, y, width = 180)
     change_color(normal_color)
     draw_text(x, y, width, line_height, actor.class.name)
   end
