@@ -24,7 +24,7 @@ class Window_ShopBuy < Window_Selectable
   #--------------------------------------------------------------------------
   def window_width
 #    return 304
-    return 400
+    return 320
   end
   #--------------------------------------------------------------------------
   # * Get Number of Items
