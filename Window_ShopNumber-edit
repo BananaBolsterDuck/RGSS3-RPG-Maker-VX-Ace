@@ -26,7 +26,7 @@ class Window_ShopNumber < Window_Selectable
   #--------------------------------------------------------------------------
   def window_width
 #    return 304
-    return 400
+    return 320
   end
   #--------------------------------------------------------------------------
   # * Set Item, Max Quantity, Price, and Currency Unit
@@ -99,7 +99,7 @@ class Window_ShopNumber < Window_Selectable
   #--------------------------------------------------------------------------
   def figures
 #    return 2
-    return 3
+    return 5
   end
   #--------------------------------------------------------------------------
   # * Frame Update
