@@ -381,8 +381,8 @@ class Game_Battler < Game_BattlerBase
   # * Apply Critical
   #--------------------------------------------------------------------------
   def apply_critical(damage)
-#    damage * 3
-    damage * 3 + user.luk # Added user's LUK to the damage formula
+    damage * 3
+#    damage * 3 + user.luk # Crashes my game :(
   end
   #--------------------------------------------------------------------------
   # * Applying Variance
@@ -738,7 +738,7 @@ class Game_Battler < Game_BattlerBase
   #--------------------------------------------------------------------------
   def clear_tp
 #    self.tp = 0
-    self.tp = 512
+    self.tp = 1023
   end
   #--------------------------------------------------------------------------
   # * Charge TP by Damage Suffered
