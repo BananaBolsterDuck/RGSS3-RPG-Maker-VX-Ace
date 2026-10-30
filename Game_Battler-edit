@@ -731,7 +731,8 @@ class Game_Battler < Game_BattlerBase
   # * Initialize TP
   #--------------------------------------------------------------------------
   def init_tp
-    self.tp += rand * 25
+#    self.tp += rand * 25
+    self.tp += rand * 50
   end
   #--------------------------------------------------------------------------
   # * Clear TP
@@ -744,7 +745,8 @@ class Game_Battler < Game_BattlerBase
   # * Charge TP by Damage Suffered
   #--------------------------------------------------------------------------
   def charge_tp_by_damage(damage_rate)
-    self.tp -= 50 * damage_rate * tcr
+#    self.tp += 50 * damage_rate * tcr
+    self.tp -= 50 * damage_rate * tcr # TP is lowered when hit instead of increased
   end
   #--------------------------------------------------------------------------
   # * Regenerate HP
